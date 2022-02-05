@@ -23,7 +23,7 @@ from telethon.errors import (
 )
 
 ERROR_MESSAGE = "Oops! An exception occurred! \n\n**Error** : {} " \
-            "\n\nPlease forward this to @Legend_K_Userbot if this message doesn't contain any " \
+            "\n\nPlease forward this to @ItsMe_Lithiumop if this message doesn't contain any " \
             "sensitive information and for your information : **These kinda error logs are not stored in our database!**"
 
 
@@ -115,19 +115,19 @@ async def generate_session(bot, msg, telethon=False):
     else:
         string_session = await client.export_session_string()
     text = "**{} ~ STRING SESSION** \n\n`{}` \n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session)
-    L_PIC = "https://te.legra.ph/file/4cd4fe720a6bd77481158.jpg"
+    L_PIC = "https://telegra.ph/file/5c94ef7086d24913e63c4.jpg"
     #await msg.reply({text})
     if telethon:
         await client.send_file("me", L_PIC, caption="**{} - STRING SESSION** \n\n`{}`\n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session))
         try:
-            await client(JoinChannelRequest("@Official_K_LegendBot"))
-            await client(LeaveChannelRequest("@Legend_Userbot"))
-            await client(LeaveChannelRequest("@Official_LegendBot"))
+            await client(JoinChannelRequest("@DeviLisGoDs"))
+            await client(LeaveChannelRequest("@DeviLisLorD"))
+            await client(LeaveChannelRequest("@About_Lithiumop"))
         except BaseException:
             pass
     else:
         await client.send_message("me", text)
-        #await client.join_chat("@Official_K_LegendBot")
+        #await client.join_chat("@DeviLisLorD")
     await client.disconnect()
     await phone_code_msg.reply("Successfully String  Session Has Been Generated {} \n\nPlease check your saved messages!".format("telethon" if telethon else "pyrogram"), reply_markup=InlineKeyboardMarkup(Data.support_button))
 
